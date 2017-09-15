@@ -12,10 +12,10 @@ public class Q1_LettersNotUsed {
 
 		for ( int i=0; i<numOfCase; i++ ) {
 			String checkStr = strList.get(i);
-			checkAlpha( checkStr );
+			checkAlpha( checkStr, i );
 		}
 
-		System.out.println( strList.get(1) );
+		System.out.println();
 
 		
 	}
@@ -33,8 +33,29 @@ public class Q1_LettersNotUsed {
 		return strList;
 	}
 
-	static void checkAlpha( String checkStr ) {
-		System.out.println( checkStr );
+	static void checkAlpha( String checkStr, int i ) {
+
+		checkStr = checkStr.toLowerCase();
+		ArrayList<String> alphaList = new ArrayList<>(Arrays.asList("a", "b", "c", "d", "e"));
+		System.out.println();
+
+		for ( int j=4; j>-1; j-- ) {
+			String alphaStr = alphaList.get(j);
+			char alpha = alphaStr.charAt(0);
+			System.out.println("char alpha: " + alpha);
+
+			for ( int k=0; k<checkStr.length(); k++ ) {
+				if ( alpha == checkStr.charAt(k) ) {
+					alphaList.remove(j);
+					System.out.println(alphaList);
+					break;
+				}
+			}
+		}
+		System.out.println();
+		System.out.print( "Letters missing in case #" + (i+1) + ": " );
+
+		for ( int l=0; l<alphaList.size(); l++ ) System.out.print( alphaList.get(l) );
 	}
 
 
