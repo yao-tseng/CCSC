@@ -1,3 +1,14 @@
+/*
+ * 2015 CCSC Student Programming Contest
+ *
+ * < Problem 1 -- Letters Not Used >
+ * For this problem, you are interested in displaying a list of all letters that do not
+ * appear in a given input string. The letters in the output will be lowercase,
+ * regardless of the case letters in the input string.
+ *
+ */
+
+
 import java.util.*;
 import java.io.*;
 
