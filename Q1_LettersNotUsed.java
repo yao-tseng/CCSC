@@ -6,6 +6,12 @@
  * appear in a given input string. The letters in the output will be lowercase,
  * regardless of the case letters in the input string.
  *
+ * < Input >
+ * The first line of input contains a single integer n, (1 <= n <= 1000), which is the
+ * number of test cases follow. Each test case consists of a single line of input
+ * containing a string. Each string is of length n, (1 <= n <= 80). All input strings will
+ * consist solely of letters and spaces, no punctuation or special symbols.
+ *											 ^
  */
 
 
@@ -50,19 +56,22 @@ public class Q1_LettersNotUsed {
 		ArrayList<String> alphaList = new ArrayList<>(Arrays.asList("a", "b", "c", "d", "e"));
 		System.out.println();
 
-		for ( int j=4; j>-1; j-- ) {
+/*		for ( int j=4; j>-1; j-- ) {
 			String alphaStr = alphaList.get(j);
 			char alpha = alphaStr.charAt(0);
-			System.out.println("char alpha: " + alpha);
+			System.out.println("char alpha: " + alpha + ", " + (int)alpha);
 
 			for ( int k=0; k<checkStr.length(); k++ ) {
-				if ( alpha == checkStr.charAt(k) ) {
+				System.out.print(" <"+checkStr.charAt(k)+"> ");
+				if ( (alpha==checkStr.charAt(k)) && ((int)alpha>96) && ((int)alpha<123) ) {
 					alphaList.remove(j);
 					System.out.println(alphaList);
 					break;
 				}
 			}
 		}
+*/
+
 		System.out.println();
 		System.out.print( "Letters missing in case #" + (i+1) + ": " );
 
