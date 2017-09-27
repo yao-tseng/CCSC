@@ -24,7 +24,6 @@ public class Q1_LettersNotUsed {
 		Scanner scanner = new Scanner( System.in );
 		System.out.print( "Input cases: " );
 		int numOfCase = scanner.nextInt();
-
 		ArrayList<String> strList = addStr( numOfCase );
 
 		for ( int i=0; i<numOfCase; i++ ) {
@@ -33,13 +32,12 @@ public class Q1_LettersNotUsed {
 		}
 
 		System.out.println();
-
-		
 	}
 
 	static ArrayList<String> addStr( int numOfCase ) {
 		int strCount = 0;
 		ArrayList<String> strList = new ArrayList<>();
+
 		while ( strCount < numOfCase ) {
 			System.out.print( "Input string #" + (strCount+1) + ": " );
 			Scanner rawInStr = new Scanner( System.in );
@@ -49,9 +47,6 @@ public class Q1_LettersNotUsed {
 			strCount += 1;
 		
 		}
-
-		
-
 
 		return strList;
 	}
@@ -77,13 +72,9 @@ public class Q1_LettersNotUsed {
 			}
 		}
 
-
 		System.out.println();
 		System.out.print( "Letters missing in case #" + (i+1) + ": " );
 
 		for ( int l=0; l<alphaList.size(); l++ ) System.out.print( alphaList.get(l) );
 	}
-
-
-
 }
