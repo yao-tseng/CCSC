@@ -18,7 +18,7 @@
 import java.util.*;
 import java.io.*;
 
-public class Q1_LettersNotUsed {
+public class 201501_LettersNotUsed {
 
 	public static void main( String[] args ) {
 		Scanner scanner = new Scanner( System.in );
