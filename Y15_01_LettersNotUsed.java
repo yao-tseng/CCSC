@@ -21,19 +21,23 @@ import java.io.*;
 public class Y15_01_LettersNotUsed {
 
 	public static void main( String[] args ) {
-		Scanner scanner = new Scanner( System.in );
+		//input the cases to check;
+		//call function addStr to add case by case to array list;
 		System.out.print( "Input cases: " );
+		Scanner scanner = new Scanner( System.in );
 		int numOfCase = scanner.nextInt();
 		ArrayList<String> strList = addStr( numOfCase );
 
+		//for each case, call function checkAlpha to check missing alphabets;
 		for ( int i=0; i<numOfCase; i++ ) {
-			String checkStr = strList.get(i);
-			checkAlpha( checkStr, i );
+			String str = strList.get(i);
+			checkAlpha( str, i );
 		}
 
 		System.out.println();
 	}
 
+	//(Function)addStr: add case by case to an array list; return the array list to main;
 	static ArrayList<String> addStr( int numOfCase ) {
 		int strCount = 0;
 		ArrayList<String> strList = new ArrayList<>();
@@ -43,7 +47,6 @@ public class Y15_01_LettersNotUsed {
 			Scanner rawInStr = new Scanner( System.in );
 			String inStr = rawInStr.nextLine();
 			strList.add( inStr );
-			System.out.println( "strList: " + strList );
 			strCount += 1;
 		
 		}
@@ -51,22 +54,19 @@ public class Y15_01_LettersNotUsed {
 		return strList;
 	}
 
-	static void checkAlpha( String checkStr, int i ) {
+	//check missing letters for each case;
+	static void checkAlpha( String str, int i ) {
 
-		checkStr = checkStr.toLowerCase();
+		str = str.toLowerCase();
 		ArrayList<String> alphaList = new ArrayList<>(Arrays.asList("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"));
-		System.out.println();
 
 		for ( int j=25; j>-1; j-- ) {
 			String alphaStr = alphaList.get(j);
-			char alpha = alphaStr.charAt(0);
-			System.out.println("char alpha: " + alpha + ", " + (int)alpha);
+			char alphabet = alphaStr.charAt(0);
 
-			for ( int k=0; k<checkStr.length(); k++ ) {
-				System.out.print(" <"+checkStr.charAt(k)+"> ");
-				if ( (alpha==checkStr.charAt(k)) && ((int)alpha>96) && ((int)alpha<123) ) {
+			for ( int k=0; k<str.length(); k++ ) {
+				if ( (alphabet==str.charAt(k)) ) {
 					alphaList.remove(j);
-					System.out.println(alphaList);
 					break;
 				}
 			}
